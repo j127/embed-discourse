@@ -7,36 +7,38 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface DiscourseEmbedTopics {
-        "categoryId"?: number;
-        "forumBaseUrl": string;
-        "numTopics": number;
-        "tag"?: string;
+        categoryId?: number;
+        forumBaseUrl: string;
+        numTopics: number;
+        tag?: string;
     }
     interface MyComponent {
         /**
-          * The first name
+         * The first name
          */
-        "first": string;
+        first: string;
         /**
-          * The last name
+         * The last name
          */
-        "last": string;
+        last: string;
         /**
-          * The middle name
+         * The middle name
          */
-        "middle": string;
-        "testme": string;
+        middle: string;
+        testme: string;
     }
 }
 declare global {
-    interface HTMLDiscourseEmbedTopicsElement extends Components.DiscourseEmbedTopics, HTMLStencilElement {
-    }
+    interface HTMLDiscourseEmbedTopicsElement
+        extends Components.DiscourseEmbedTopics,
+            HTMLStencilElement {}
     var HTMLDiscourseEmbedTopicsElement: {
         prototype: HTMLDiscourseEmbedTopicsElement;
         new (): HTMLDiscourseEmbedTopicsElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
+    interface HTMLMyComponentElement
+        extends Components.MyComponent,
+            HTMLStencilElement {}
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
@@ -48,25 +50,25 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DiscourseEmbedTopics {
-        "categoryId"?: number;
-        "forumBaseUrl"?: string;
-        "numTopics"?: number;
-        "tag"?: string;
+        categoryId?: number;
+        forumBaseUrl?: string;
+        numTopics?: number;
+        tag?: string;
     }
     interface MyComponent {
         /**
-          * The first name
+         * The first name
          */
-        "first"?: string;
+        first?: string;
         /**
-          * The last name
+         * The last name
          */
-        "last"?: string;
+        last?: string;
         /**
-          * The middle name
+         * The middle name
          */
-        "middle"?: string;
-        "testme"?: string;
+        middle?: string;
+        testme?: string;
     }
     interface IntrinsicElements {
         "discourse-embed-topics": DiscourseEmbedTopics;
@@ -77,8 +79,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "discourse-embed-topics": LocalJSX.DiscourseEmbedTopics & JSXBase.HTMLAttributes<HTMLDiscourseEmbedTopicsElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "discourse-embed-topics": LocalJSX.DiscourseEmbedTopics &
+                JSXBase.HTMLAttributes<HTMLDiscourseEmbedTopicsElement>;
+            "my-component": LocalJSX.MyComponent &
+                JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

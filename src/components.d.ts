@@ -5,73 +5,92 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IDiscourseTopic } from "./components/discourse-topic-link/discourse-topic-link";
 export namespace Components {
     interface DiscourseEmbedTopics {
-        categoryId?: number;
-        forumBaseUrl: string;
-        numTopics: number;
-        tag?: string;
+        "categoryId"?: number;
+        "forumBaseUrl": string;
+        "numTopics": number;
+        "tag"?: string;
+    }
+    interface DiscourseTopicLink {
+        "newWindow"?: boolean;
+        "noopener"?: boolean;
+        "noreferrer"?: boolean;
+        "topic": IDiscourseTopic;
     }
     interface MyComponent {
         /**
-         * The first name
+          * The first name
          */
-        first: string;
+        "first": string;
         /**
-         * The last name
+          * The last name
          */
-        last: string;
+        "last": string;
         /**
-         * The middle name
+          * The middle name
          */
-        middle: string;
-        testme: string;
+        "middle": string;
+        "testme": string;
     }
 }
 declare global {
-    interface HTMLDiscourseEmbedTopicsElement
-        extends Components.DiscourseEmbedTopics,
-            HTMLStencilElement {}
+    interface HTMLDiscourseEmbedTopicsElement extends Components.DiscourseEmbedTopics, HTMLStencilElement {
+    }
     var HTMLDiscourseEmbedTopicsElement: {
         prototype: HTMLDiscourseEmbedTopicsElement;
         new (): HTMLDiscourseEmbedTopicsElement;
     };
-    interface HTMLMyComponentElement
-        extends Components.MyComponent,
-            HTMLStencilElement {}
+    interface HTMLDiscourseTopicLinkElement extends Components.DiscourseTopicLink, HTMLStencilElement {
+    }
+    var HTMLDiscourseTopicLinkElement: {
+        prototype: HTMLDiscourseTopicLinkElement;
+        new (): HTMLDiscourseTopicLinkElement;
+    };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
         "discourse-embed-topics": HTMLDiscourseEmbedTopicsElement;
+        "discourse-topic-link": HTMLDiscourseTopicLinkElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface DiscourseEmbedTopics {
-        categoryId?: number;
-        forumBaseUrl?: string;
-        numTopics?: number;
-        tag?: string;
+        "categoryId"?: number;
+        "forumBaseUrl"?: string;
+        "numTopics"?: number;
+        "tag"?: string;
+    }
+    interface DiscourseTopicLink {
+        "newWindow"?: boolean;
+        "noopener"?: boolean;
+        "noreferrer"?: boolean;
+        "topic"?: IDiscourseTopic;
     }
     interface MyComponent {
         /**
-         * The first name
+          * The first name
          */
-        first?: string;
+        "first"?: string;
         /**
-         * The last name
+          * The last name
          */
-        last?: string;
+        "last"?: string;
         /**
-         * The middle name
+          * The middle name
          */
-        middle?: string;
-        testme?: string;
+        "middle"?: string;
+        "testme"?: string;
     }
     interface IntrinsicElements {
         "discourse-embed-topics": DiscourseEmbedTopics;
+        "discourse-topic-link": DiscourseTopicLink;
         "my-component": MyComponent;
     }
 }
@@ -79,10 +98,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "discourse-embed-topics": LocalJSX.DiscourseEmbedTopics &
-                JSXBase.HTMLAttributes<HTMLDiscourseEmbedTopicsElement>;
-            "my-component": LocalJSX.MyComponent &
-                JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "discourse-embed-topics": LocalJSX.DiscourseEmbedTopics & JSXBase.HTMLAttributes<HTMLDiscourseEmbedTopicsElement>;
+            "discourse-topic-link": LocalJSX.DiscourseTopicLink & JSXBase.HTMLAttributes<HTMLDiscourseTopicLinkElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

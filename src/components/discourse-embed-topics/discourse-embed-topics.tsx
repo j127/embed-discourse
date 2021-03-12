@@ -1,4 +1,9 @@
 import { Component, Prop, State, Host, h } from "@stencil/core";
+import {
+    createDiscourseTopicUrl,
+    IDiscourseTopicUrlOptions,
+} from "../../utils/discourse";
+import { IDiscourseTopic } from "../discourse-topic-link/discourse-topic-link";
 
 @Component({
     tag: "discourse-embed-topics",
@@ -9,40 +14,21 @@ export class DiscourseEmbedTopics {
     @Prop() forumBaseUrl: string;
     @Prop() numTopics: number = 7;
     @Prop() categoryId?: number;
-    @Prop() tag?: string; // I don't think there is a view for multiple tags
 
+    // I don't think there is a Discourse view for multiple tags
+    @Prop() tag?: string;
+
+    @State() apiUrl: string;
     @State() topics: object[];
     @State() fetchError: boolean = false;
 
-    createDiscourseUrl() {
-        let slug: string;
-        // const categoryIdString = this.categoryId
-        //     ? (this.categoryId as string)
-        //     : undefined;
-
-        if (this.categoryId && this.tag) {
-            // both https://forum.codeselfstudy.com/tags/c/8/vim.json
-            slug = `tags/c/${this.categoryId}/${this.tag}`;
-        } else if (this.categoryId) {
-            slug = `c/${this.categoryId}`;
-        } else if (this.tag) {
-            // https://forum.codeselfstudy.com/tag/linux.json
-            slug = `tag/${this.tag}`;
-        } else {
-            slug = "latest";
-        }
-        console.log("slug", slug);
-        return `${this.forumBaseUrl}/${slug}.json`;
-    }
-
     createLinkToTopic(topicId: number, slug: string): string {
-        return `t/${slug}/${topicId}`;
+        return `${this.forumBaseUrl}/t/${slug}/${topicId}`;
     }
 
     async fetchTopics() {
-        const url = this.createDiscourseUrl();
         try {
-            const response = await fetch(url);
+            const response = await fetch(this.apiUrl);
 
             if (!response.ok) {
                 throw new Error(`HTTP error. Status: ${response.status}`);
@@ -73,6 +59,12 @@ export class DiscourseEmbedTopics {
     }
 
     componentWillLoad() {
+        const options: IDiscourseTopicUrlOptions = {
+            forumBaseUrl: this.forumBaseUrl,
+            categoryId: this.categoryId,
+            tag: this.tag,
+        };
+        this.apiUrl = createDiscourseTopicUrl(options);
         this.fetchTopics();
     }
 
@@ -80,22 +72,16 @@ export class DiscourseEmbedTopics {
         return (
             <Host>
                 <p>
-                    loading {this.numTopics} topics from {this.forumBaseUrl}
-                    /latest.json
+                    loading {this.numTopics} topics from {this.apiUrl}
                 </p>
                 <div>
                     {this.topics ? (
                         <ul class="discourse-topics">
-                            {this.topics.map((t) => (
-                                <li>
-                                    <a
-                                        href={`${this.forumBaseUrl}/${t["url"]}`}
-                                        target="_blank"
-                                        rel="noreferrer,noopener"
-                                    >
-                                        {t["title"]}
-                                    </a>
-                                </li>
+                            {this.topics.map((t: IDiscourseTopic) => (
+                                <discourse-topic-link
+                                    class="discourse-topic-link"
+                                    topic={t}
+                                ></discourse-topic-link>
                             ))}
                         </ul>
                     ) : (
@@ -106,6 +92,3 @@ export class DiscourseEmbedTopics {
         );
     }
 }
-// <Host>
-//     <slot></slot>
-// </Host>

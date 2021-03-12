@@ -7,7 +7,7 @@ export interface IDiscourseTopic {
 
 @Component({
     tag: "discourse-topic-link",
-    styleUrl: "discourse-topic-link.css",
+    styleUrl: "discourse-topic-link.scss",
     shadow: true,
 })
 export class DiscourseTopicLink {
@@ -20,7 +20,7 @@ export class DiscourseTopicLink {
 
     render() {
         return (
-            <li>
+            <li class="discourse-topic-link">
                 <a
                     href={this.topic["url"]}
                     target={this.newWindow ? "_blank" : ""}

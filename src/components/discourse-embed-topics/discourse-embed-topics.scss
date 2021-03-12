@@ -2,16 +2,13 @@
     display: block;
 }
 
+a.discourse-forum-link {
+    text-decoration: none;
+}
+
 ul.discourse-topics {
     list-style-type: none;
     padding: 0;
     margin: 0;
 
-    li {
-        padding-bottom: 5px;
-    }
-
-    a {
-        text-decoration: none;
-    }
 }

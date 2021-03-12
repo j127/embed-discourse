@@ -1,4 +1,4 @@
-import { Component, Prop, State, Host, h } from "@stencil/core";
+import { Component, Prop, State, h } from "@stencil/core";
 import {
     createDiscourseTopicUrl,
     IDiscourseTopicUrlOptions,
@@ -70,7 +70,7 @@ export class DiscourseEmbedTopics {
 
     render() {
         return (
-            <Host>
+            <div class="discourse-embed-topics">
                 <p>
                     loading {this.numTopics} topics from {this.apiUrl}
                 </p>
@@ -85,10 +85,19 @@ export class DiscourseEmbedTopics {
                             ))}
                         </ul>
                     ) : (
-                        <span class="discourse-loading">Loading&hellip;</span>
+                        <span class="discourse-loading">
+                            <a
+                                class="discourse-forum-link"
+                                href={this.forumBaseUrl}
+                                target="_blank"
+                                rel="noopener, nofollow"
+                            >
+                                Visit the forum
+                            </a>
+                        </span>
                     )}
                 </div>
-            </Host>
+            </div>
         );
     }
 }

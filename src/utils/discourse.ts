@@ -10,7 +10,7 @@ export function createDiscourseTopicUrl(
     opts: IDiscourseTopicUrlOptions
 ): string {
     let slug: string;
-
+    console.log("opts", opts);
     if (opts.categoryId && opts.tag) {
         // both https://forum.example.com/tags/c/8/some-tag.json
         slug = `tags/c/${opts.categoryId}/${opts.tag}`;

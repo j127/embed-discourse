@@ -21,12 +21,17 @@ export class MyComponent {
      * The last name
      */
     @Prop() last: string;
+    @Prop() testme: string;
 
     private getText(): string {
         return format(this.first, this.middle, this.last);
     }
 
     render() {
-        return <div>Hello, World! I'm {this.getText()}</div>;
+        return (
+            <div>
+                *{this.testme}* // Hello, World! I'm {this.getText()}
+            </div>
+        );
     }
 }

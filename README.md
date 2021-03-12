@@ -1,12 +1,13 @@
-# README
+# embed-discourse
+
+This is a work in progress. Don't use it yet!
 
 This project contains Stencil web components that load Discourse content in other websites. You can use it with vanilla JS, React, Vue, or any JavaScript project.
 
 ## Installation
 
 ```
-TODO
-$ npm install -S
+TODO $ # npm install
 ```
 
 ### CORS Settings

@@ -1,9 +1,9 @@
 import { Component, Prop, State, h } from "@stencil/core";
 import {
-    createDiscourseTopicUrl,
-    IDiscourseTopicUrlOptions,
+    Discourse,
+    IDiscourseTopic,
+    IDiscourseOptions,
 } from "../../utils/discourse";
-import { IDiscourseTopic } from "../discourse-topic-link/discourse-topic-link";
 
 @Component({
     tag: "discourse-embed-topics",
@@ -18,62 +18,23 @@ export class DiscourseEmbedTopics {
     // I don't think there is a Discourse view for multiple tags
     @Prop() tag?: string;
 
-    @State() apiUrl: string;
-    @State() topics: object[];
+    @State() topics: IDiscourseTopic[];
     @State() fetchError: boolean = false;
 
-    createLinkToTopic(topicId: number, slug: string): string {
-        return `${this.forumBaseUrl}/t/${slug}/${topicId}`;
-    }
-
-    async fetchTopics() {
-        try {
-            const response = await fetch(this.apiUrl);
-
-            if (!response.ok) {
-                throw new Error(`HTTP error. Status: ${response.status}`);
-            }
-            const data = await response.json();
-
-            const rawTopics = data["topic_list"]["topics"].slice(
-                0,
-                this.numTopics
-            );
-            this.topics = this.formatTopics(rawTopics);
-        } catch (err) {
-            console.error(`ERROR ${err}`);
-            this.fetchError = true;
-        }
-    }
-
-    formatTopics(rawTopics: object[]) {
-        const result = rawTopics.map((t) => {
-            return {
-                title: t["title"],
-                url: this.createLinkToTopic(t["id"], t["slug"]),
-            };
-        });
-        console.log("result", result);
-
-        return result;
-    }
-
-    componentWillLoad() {
-        const options: IDiscourseTopicUrlOptions = {
+    async componentWillLoad() {
+        const options: IDiscourseOptions = {
             forumBaseUrl: this.forumBaseUrl,
             categoryId: this.categoryId,
             tag: this.tag,
+            numTopics: this.numTopics,
         };
-        this.apiUrl = createDiscourseTopicUrl(options);
-        this.fetchTopics();
+        const discourse = new Discourse(options);
+        this.topics = await discourse.getTopics();
     }
 
     render() {
         return (
             <div class="discourse-embed-topics">
-                <p>
-                    loading {this.numTopics} topics from {this.apiUrl}
-                </p>
                 <div>
                     {this.topics ? (
                         <ul class="discourse-topics">

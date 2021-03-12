@@ -1,9 +1,5 @@
 import { Component, Prop, h } from "@stencil/core";
-
-export interface IDiscourseTopic {
-    url: string;
-    title: string;
-}
+import { IDiscourseTopic } from "../../utils/discourse";
 
 @Component({
     tag: "discourse-topic-link",

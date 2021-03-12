@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IDiscourseTopic } from "./components/discourse-topic-link/discourse-topic-link";
+import { IDiscourseTopic } from "./utils/discourse";
 export namespace Components {
     interface DiscourseEmbedTopics {
         "categoryId"?: number;

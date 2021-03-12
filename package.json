@@ -10,23 +10,21 @@
     "collection": "dist/collection/collection-manifest.json",
     "collection:main": "dist/collection/index.js",
     "unpkg": "dist/embed-discourse/embed-discourse.esm.js",
-    "files": [
-        "dist/",
-        "loader/"
-    ],
+    "files": ["dist/", "loader/"],
     "scripts": {
         "build": "stencil build --docs",
         "start": "stencil build --dev --watch --serve",
         "test": "stencil test --spec --e2e",
         "test.watch": "stencil test --spec --e2e --watchAll",
         "generate": "stencil generate",
-        "format": "prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html}\" --write"
+        "format": "npx prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html}\" --write"
     },
     "dependencies": {
         "@stencil/core": "2.4.0"
     },
     "license": "MIT",
     "devDependencies": {
-        "@stencil/sass": "^1.4.1"
+        "@stencil/sass": "^1.4.1",
+        "prettier": "^2.2.1"
     }
 }

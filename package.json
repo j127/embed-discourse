@@ -10,10 +10,7 @@
     "collection": "dist/collection/collection-manifest.json",
     "collection:main": "dist/collection/index.js",
     "unpkg": "dist/embed-discourse/embed-discourse.esm.js",
-    "files": [
-        "dist/",
-        "loader/"
-    ],
+    "files": ["dist/", "loader/"],
     "scripts": {
         "build": "stencil build --docs",
         "start": "stencil build --dev --watch --serve",
@@ -25,7 +22,7 @@
     "dependencies": {
         "@stencil/core": "2.4.0"
     },
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "devDependencies": {
         "@stencil/sass": "^1.4.1",
         "@types/jest": "^26.0.20",
@@ -34,5 +31,14 @@
         "jest-cli": "^26.6.3",
         "prettier": "^2.2.1",
         "puppeteer": "^5.5.0"
+    },
+    "keywords": ["discourse"],
+    "homepage": "https://github.com/j127/embed-discourse#embed-discourse",
+    "bugs": {
+        "url": "https://github.com/j127/embed-discourse/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/j127/embed-discourse.git"
     }
 }

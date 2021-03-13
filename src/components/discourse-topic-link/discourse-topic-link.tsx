@@ -4,7 +4,7 @@ import { IDiscourseTopic } from "../../utils/discourse";
 @Component({
     tag: "discourse-topic-link",
     styleUrl: "discourse-topic-link.scss",
-    shadow: true,
+    shadow: false,
 })
 export class DiscourseTopicLink {
     @Prop() topic: IDiscourseTopic;

@@ -8,7 +8,7 @@ import {
 @Component({
     tag: "discourse-embed-topics",
     styleUrl: "discourse-embed-topics.scss",
-    shadow: true,
+    shadow: false,
 })
 export class DiscourseEmbedTopics {
     @Prop() forumBaseUrl: string;

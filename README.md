@@ -99,13 +99,9 @@ export default {
 
 For more information, see the full documentation for [Vue integration](https://stenciljs.com/docs/vue).
 
-### Vanilla JavaScript
-
-TODO
-
 ### Plain HTML Pages
 
-TODO
+For more information on using this component with plain HTML or other framworks, see [the docs](https://stenciljs.com/docs/overview).
 
 ## Getting Started
 

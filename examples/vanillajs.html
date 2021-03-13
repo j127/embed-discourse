@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Embedding Discourse</title>
+        <script type="module">
+            import { defineCustomElements } from "https://cdn.jsdelivr.net/npm/@j127/embed-discourse/dist/esm/loader.js";
+            defineCustomElements();
+        </script>
+    </head>
+    <body>
+        <h1>Loading in Plain HTML</h1>
+        <p>View the source code of this page to see how it works.</p>
+        <p>
+            If you want to run the example, be sure that your CORS settings
+            enable you to access the Discourse content from the domain/port
+            where this page is running and that you have updated the URLs below
+            to point to your own installation of Discourse.
+        </p>
+        <h2>default settings</h2>
+        <discourse-embed-topics
+            forum-base-url="https://forum.example.com"
+        ></discourse-embed-topics>
+
+        <h2>3 topics from category 12, tagged with linux</h2>
+
+        <discourse-embed-topics
+            forum-base-url="https://forum.example.com"
+            tag="linux"
+            num-topics="3"
+            category-id="12"
+        ></discourse-embed-topics>
+
+        <h2>same as above, but with offset of 3</h2>
+        <discourse-embed-topics
+            forum-base-url="https://forum.example.com"
+            tag="linux"
+            num-topics="3"
+            offset="3"
+            category-id="12"
+        ></discourse-embed-topics>
+    </body>
+</html>

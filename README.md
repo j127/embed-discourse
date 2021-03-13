@@ -124,7 +124,13 @@ For more information, see the full documentation for [Vue integration](https://s
 
 ### Plain HTML Pages
 
+See the `examples/vanillajs.html` file for an example.
+
 For more information on using this component with plain HTML or other framworks, see [the docs](https://stenciljs.com/docs/overview).
+
+### Other Ways to Load It
+
+[This page](https://stenciljs.com/docs/distribution) explains other ways to load the component.
 
 ## Development
 

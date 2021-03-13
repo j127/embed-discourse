@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <title>Embedding Discourse</title>
         <script type="module">
+            // Be sure to look at the brower support before using this technique:
+            // https://caniuse.com/es6-module
             import { defineCustomElements } from "https://cdn.jsdelivr.net/npm/@j127/embed-discourse/dist/esm/loader.js";
             defineCustomElements();
         </script>

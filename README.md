@@ -130,7 +130,7 @@ For more information on using this component with plain HTML or other framworks,
 
 ### Other Ways to Load It
 
-[This page](https://stenciljs.com/docs/distribution) explains other ways to load the component.
+[This page](https://stenciljs.com/docs/distribution) explains other ways to load the component, including bundlers like webpack and parcel.
 
 ## Development
 

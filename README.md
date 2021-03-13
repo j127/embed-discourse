@@ -56,6 +56,7 @@ You can pass in other props like this if you want to filter the topics:
     forum-base-url="https://forum.example.com"
     tag="some-tagname"
     num-topics="5"
+    offset="5"
     category-id="12"
 ></discourse-embed-topics>
 ```

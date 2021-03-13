@@ -20,8 +20,7 @@
         "test": "stencil test --spec --e2e",
         "test.watch": "stencil test --spec --e2e --watchAll",
         "generate": "stencil generate",
-        "format": "npx prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html}\" --write",
-        "publish": "npm run build && npm publish --access public"
+        "format": "npx prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html}\" --write"
     },
     "dependencies": {
         "@stencil/core": "2.4.0"

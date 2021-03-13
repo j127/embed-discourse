@@ -12,6 +12,7 @@
 | `categoryId`   | `category-id`    |             | `number` | `undefined` |
 | `forumBaseUrl` | `forum-base-url` |             | `string` | `undefined` |
 | `numTopics`    | `num-topics`     |             | `number` | `7`         |
+| `offset`       | `offset`         |             | `number` | `undefined` |
 | `tag`          | `tag`            |             | `string` | `undefined` |
 
 

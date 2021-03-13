@@ -42,7 +42,6 @@ export class Discourse {
             slug = "latest";
         }
 
-        console.log("slug", slug);
         return `${this.forumBaseUrl}/${slug}.json`;
     }
 
@@ -57,7 +56,6 @@ export class Discourse {
                 url: this.createLinkToTopic(t["id"], t["slug"]),
             };
         });
-        console.log("result", result);
 
         return result;
     }

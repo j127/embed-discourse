@@ -22,6 +22,8 @@ Note the help text about the "cors origins" settings where it says that the `DIS
 
 You can use this component in React based projects.
 
+#### Create React App
+
 In `index.js`:
 
 ```javascript
@@ -59,6 +61,26 @@ You can pass in other props like this if you want to filter the topics:
 ```
 
 See the full instructions on [how to integrate Stencil components into React](https://stenciljs.com/docs/react).
+
+#### Gatsby
+
+If using Gatsby, you can load the component like this:
+
+```javascript
+useEffect(() => {
+    async function loadPosts() {
+        try {
+            const topicLoader = require("@j127/embed-discourse/loader");
+            await topicLoader.defineCustomElements(window);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    loadPosts();
+}, []);
+```
+
+Then put the component in your JSX in the same way as for create-react-app (above).
 
 ### Vue
 

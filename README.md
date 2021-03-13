@@ -105,8 +105,6 @@ TODO
 
 ### Plain HTML Pages
 
-If you want to embed posts in a plain, static HTML page, you can do it like this:
-
 TODO
 
 ## Getting Started

@@ -10,6 +10,7 @@ export namespace Components {
     interface DiscourseEmbedTopics {
         "categoryId"?: number;
         "forumBaseUrl": string;
+        "newWindow"?: boolean;
         "numTopics": number;
         "offset": number;
         "tag"?: string;
@@ -43,6 +44,7 @@ declare namespace LocalJSX {
     interface DiscourseEmbedTopics {
         "categoryId"?: number;
         "forumBaseUrl"?: string;
+        "newWindow"?: boolean;
         "numTopics"?: number;
         "offset"?: number;
         "tag"?: string;

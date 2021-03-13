@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type     | Default     |
-| -------------- | ---------------- | ----------- | -------- | ----------- |
-| `categoryId`   | `category-id`    |             | `number` | `undefined` |
-| `forumBaseUrl` | `forum-base-url` |             | `string` | `undefined` |
-| `numTopics`    | `num-topics`     |             | `number` | `7`         |
-| `offset`       | `offset`         |             | `number` | `undefined` |
-| `tag`          | `tag`            |             | `string` | `undefined` |
+| Property       | Attribute        | Description | Type      | Default     |
+| -------------- | ---------------- | ----------- | --------- | ----------- |
+| `categoryId`   | `category-id`    |             | `number`  | `undefined` |
+| `forumBaseUrl` | `forum-base-url` |             | `string`  | `undefined` |
+| `newWindow`    | `new-window`     |             | `boolean` | `false`     |
+| `numTopics`    | `num-topics`     |             | `number`  | `7`         |
+| `offset`       | `offset`         |             | `number`  | `undefined` |
+| `tag`          | `tag`            |             | `string`  | `undefined` |
 
 
 ## Dependencies

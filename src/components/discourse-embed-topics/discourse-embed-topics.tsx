@@ -16,6 +16,10 @@ export class DiscourseEmbedTopics {
     @Prop() offset: number; // numTopics + offset should be less than 30
     @Prop() categoryId?: number;
 
+    // TODO: should the user be able to select the `rel` attribute
+    // values independently?
+    @Prop() newWindow?: boolean = false; // should links open in a new tab/window?
+
     // I don't think there is a Discourse view for multiple tags
     @Prop() tag?: string;
 
@@ -44,6 +48,7 @@ export class DiscourseEmbedTopics {
                                 <discourse-topic-link
                                     class="discourse-topic-link"
                                     topic={t}
+                                    newWindow={this.newWindow}
                                 ></discourse-topic-link>
                             ))}
                         </ul>

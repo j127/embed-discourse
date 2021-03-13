@@ -124,13 +124,39 @@ For more information, see the full documentation for [Vue integration](https://s
 
 ### Plain HTML Pages
 
-See the `examples/vanillajs.html` file for an example.
+You can load the component in any HTML page (including in WordPress, Drupal, and other systems that might not be using a JavaScript framework) something like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="module">
+            // Be sure to look at the brower support before using this technique:
+            // https://caniuse.com/es6-module
+            import { defineCustomElements } from "https://cdn.jsdelivr.net/npm/@j127/embed-discourse/dist/esm/loader.js";
+            defineCustomElements();
+        </script>
+    </head>
+
+    <body>
+        <discourse-embed-topics
+            forum-base-url="https://forum.example.com"
+        ></discourse-embed-topics>
+    </body>
+</html>
+```
+
+ES6 modules only work in [newer browsers](https://caniuse.com/es6-module), so you might want to use a module bundler/transpiler first.
+
+See the `examples/vanillajs.html` file for additional examples.
 
 For more information on using this component with plain HTML or other framworks, see [the docs](https://stenciljs.com/docs/overview).
 
-### Other Ways to Load It
+### JavaScript Bundlers
 
-[This page](https://stenciljs.com/docs/distribution) explains other ways to load the component, including bundlers like webpack and parcel.
+You can use this module with JS bundlers like Webpack and Rollup. See [this page](https://stenciljs.com/docs/custom-elements) for example configurations.
+
+[The distribution docs](https://stenciljs.com/docs/distribution) might also be useful.
 
 ## Development
 

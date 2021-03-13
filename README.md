@@ -83,7 +83,7 @@ Then in a component:
 <template>
     <div id="app">
         <discourse-embed-topics
-            forum-base-url="https://forum.codeselfstudy.com"
+            forum-base-url="https://forum.example.com"
         ></discourse-embed-topics>
     </div>
 </template>
@@ -129,4 +129,3 @@ To run the unit tests for the components, run:
 ```bash
 npm test
 ```
-

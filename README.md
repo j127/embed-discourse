@@ -1,8 +1,8 @@
 # embed-discourse
 
-This project contains Stencil web components that load a list of Discourse topics in other websites. You can use it with vanilla JS, React, Vue, or any JavaScript project.
+This project contains Stencil web components that load a list of Discourse topics in other websites. You can use it with React, Vue, or any JavaScript project.
 
-This is alpha version -- use at your own risk. It's my first time using Stencil. Send me a message if you want to make a pull request.
+This is a work in progress. Send me a message if you want to make a pull request.
 
 ## Installation
 
@@ -126,7 +126,7 @@ For more information, see the full documentation for [Vue integration](https://s
 
 For more information on using this component with plain HTML or other framworks, see [the docs](https://stenciljs.com/docs/overview).
 
-## Getting Started
+## Development
 
 Run in development:
 

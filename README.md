@@ -69,7 +69,7 @@ If using Gatsby, you can load the component like this:
 
 ```javascript
 useEffect(() => {
-    async function loadPosts() {
+    async function loadTopics() {
         try {
             const topicLoader = require("@j127/embed-discourse/loader");
             await topicLoader.defineCustomElements(window);
@@ -77,7 +77,7 @@ useEffect(() => {
             console.error(err);
         }
     }
-    loadPosts();
+    loadTopics();
 }, []);
 ```
 

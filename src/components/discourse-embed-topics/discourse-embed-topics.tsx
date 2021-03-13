@@ -57,7 +57,7 @@ export class DiscourseEmbedTopics {
                             <a
                                 class="discourse-forum-link"
                                 href={this.forumBaseUrl}
-                                target="_blank"
+                                target={this.newWindow ? "_blank" : ""}
                                 rel="noopener, nofollow"
                             >
                                 Visit the forum

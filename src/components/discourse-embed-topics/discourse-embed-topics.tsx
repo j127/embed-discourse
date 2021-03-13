@@ -13,6 +13,7 @@ import {
 export class DiscourseEmbedTopics {
     @Prop() forumBaseUrl: string;
     @Prop() numTopics: number = 7;
+    @Prop() offset: number; // numTopics + offset should be less than 30
     @Prop() categoryId?: number;
 
     // I don't think there is a Discourse view for multiple tags
@@ -27,6 +28,7 @@ export class DiscourseEmbedTopics {
             categoryId: this.categoryId,
             tag: this.tag,
             numTopics: this.numTopics,
+            offset: this.offset,
         };
         const discourse = new Discourse(options);
         this.topics = await discourse.getTopics();

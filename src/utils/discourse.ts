@@ -8,6 +8,7 @@ export interface IDiscourseOptions {
     categoryId?: number;
     tag?: string;
     numTopics?: number;
+    offset?: number;
 }
 
 export class Discourse {
@@ -15,6 +16,7 @@ export class Discourse {
     categoryId: number;
     tag: string;
     numTopics: number;
+    offset: number;
     topics: IDiscourseTopic[];
     apiUrl: string;
 
@@ -23,6 +25,7 @@ export class Discourse {
         this.categoryId = options.categoryId;
         this.tag = options.tag;
         this.numTopics = options.numTopics || 5;
+        this.offset = options.offset || 0;
         this.apiUrl = this.createDiscourseTopicsUrl();
         this.topics = [];
     }
@@ -77,8 +80,8 @@ export class Discourse {
             const data = await response.json();
 
             const rawTopics = data["topic_list"]["topics"].slice(
-                0,
-                this.numTopics
+                this.offset,
+                this.offset + this.numTopics
             );
             this.topics = this.formatTopics(rawTopics);
         } catch (err) {

@@ -11,6 +11,7 @@ export namespace Components {
         "categoryId"?: number;
         "forumBaseUrl": string;
         "numTopics": number;
+        "offset": number;
         "tag"?: string;
     }
     interface DiscourseTopicLink {
@@ -43,6 +44,7 @@ declare namespace LocalJSX {
         "categoryId"?: number;
         "forumBaseUrl"?: string;
         "numTopics"?: number;
+        "offset"?: number;
         "tag"?: string;
     }
     interface DiscourseTopicLink {

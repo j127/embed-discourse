@@ -15,8 +15,11 @@ export const config: Config = {
         {
             type: "docs-readme",
         },
+
+        // www is just for viewing it during development
         {
             type: "www",
+            serviceWorker: null,
         },
     ],
 };

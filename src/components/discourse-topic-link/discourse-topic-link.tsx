@@ -22,7 +22,7 @@ export class DiscourseTopicLink {
                     target={this.newWindow ? "_blank" : ""}
                     rel={`${this.noreferrer ? "noreferrer" : ""} ${
                         this.noopener ? "noopener" : ""
-                    }`}
+                    }`.trim()}
                 >
                     {this.topic["title"]}
                 </a>

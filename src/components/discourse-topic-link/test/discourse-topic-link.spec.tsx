@@ -18,11 +18,9 @@ describe("discourse-topic-link", () => {
         });
         expect(page.root).toEqualHtml(`
             <discourse-topic-link>
-                <mock:shadow-root>
                     <li class="discourse-topic-link">
                         <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" target="_blank" rel="noreferrer noopener">Install Plugins in Discourse</a>
                     </li>
-                </mock:shadow-root>
             </discourse-topic-link>
         `);
     });
@@ -43,11 +41,9 @@ describe("discourse-topic-link", () => {
         });
         expect(page.root).toEqualHtml(`
             <discourse-topic-link>
-                <mock:shadow-root>
                     <li class="discourse-topic-link">
-                        <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" rel=" " target="">Install Plugins in Discourse</a>
+                        <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" rel="" target="">Install Plugins in Discourse</a>
                     </li>
-                </mock:shadow-root>
             </discourse-topic-link>
         `);
     });
@@ -68,11 +64,9 @@ describe("discourse-topic-link", () => {
         });
         expect(page.root).toEqualHtml(`
             <discourse-topic-link>
-                <mock:shadow-root>
                     <li class="discourse-topic-link">
-                        <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" rel=" noopener" target="_blank">Install Plugins in Discourse</a>
+                        <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" rel="noopener" target="_blank">Install Plugins in Discourse</a>
                     </li>
-                </mock:shadow-root>
             </discourse-topic-link>
         `);
     });
@@ -95,11 +89,9 @@ describe("discourse-topic-link", () => {
         });
         expect(page.root).toEqualHtml(`
             <discourse-topic-link>
-                <mock:shadow-root>
                     <li class="discourse-topic-link">
-                        <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" rel="noreferrer " target="">Install Plugins in Discourse</a>
+                        <a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157" rel="noreferrer" target="">Install Plugins in Discourse</a>
                     </li>
-                </mock:shadow-root>
             </discourse-topic-link>
         `);
     });

@@ -1,6 +1,6 @@
 {
     "name": "@j127/embed-discourse",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Embed Discourse topics on other websites",
     "main": "dist/index.cjs.js",
     "module": "dist/custom-elements/index.js",

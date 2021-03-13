@@ -1,6 +1,6 @@
 {
     "name": "@j127/embed-discourse",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "Embed Discourse topics on other websites",
     "main": "dist/index.cjs.js",
     "module": "dist/custom-elements/index.js",
@@ -32,7 +32,14 @@
         "prettier": "^2.2.1",
         "puppeteer": "^5.5.0"
     },
-    "keywords": ["discourse"],
+    "keywords": [
+        "components",
+        "webcomponents",
+        "react",
+        "vue",
+        "stencil",
+        "discourse"
+    ],
     "homepage": "https://github.com/j127/embed-discourse#embed-discourse",
     "bugs": {
         "url": "https://github.com/j127/embed-discourse/issues"

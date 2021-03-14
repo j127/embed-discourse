@@ -1,6 +1,9 @@
 export interface IDiscourseTopic {
     url: string;
     title: string;
+    categoryId: number;
+    likeCount: number;
+    postsCount: number;
 }
 
 export interface IDiscourseOptions {
@@ -57,6 +60,9 @@ export class Discourse {
             return {
                 title: t["title"],
                 url: this.createLinkToTopic(t["id"], t["slug"]),
+                categoryId: t["category_id"],
+                likeCount: t["like_count"],
+                postsCount: t["posts_count"],
             };
         });
 

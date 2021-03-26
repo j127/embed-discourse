@@ -23,7 +23,7 @@
         "format": "npx prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html}\" --write"
     },
     "dependencies": {
-        "@stencil/core": "2.4.0"
+        "@stencil/core": "2.5.1"
     },
     "license": "BSD-3-Clause",
     "devDependencies": {

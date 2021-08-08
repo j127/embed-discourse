@@ -23,18 +23,18 @@
         "format": "npx prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html}\" --write"
     },
     "dependencies": {
-        "@stencil/core": "2.4.0"
+        "@stencil/core": "2.6.0"
     },
     "license": "BSD-3-Clause",
     "devDependencies": {
         "@stencil/sass": "^1.4.1",
         "@types/jest": "^26.0.24",
         "@types/puppeteer": "^5.4.4",
-        "jest": "^26.6.3",
+        "jest": "^27.0.6",
         "jest-cli": "^26.6.3",
         "prettier": "^2.3.2",
-        "puppeteer": "^5.5.0",
-        "workbox-build": "^4.3.1"
+        "puppeteer": "^10.2.0",
+        "workbox-build": "^6.2.2"
     },
     "keywords": [
         "components",

@@ -1,3 +1,7 @@
+# Archived
+
+This was a fun experiment, but I moved on to another method of loading Discourse posts. Feel free to fork the project.
+
 # embed-discourse
 
 This project contains Stencil web components that load a list of Discourse topics in other websites. You can use it with React, Vue, or any JavaScript project.
